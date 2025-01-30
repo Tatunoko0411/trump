@@ -11,7 +11,8 @@ namespace ConsoleTrump
         static void Main(string[] args)
         {
             int[] card = new int[4];
-
+            int[] number = new int[4];
+            int pair = 0;
             for (int i = 0; i < card.Length; i++)
             {
                 while(true)
@@ -34,10 +35,23 @@ namespace ConsoleTrump
 
             for (int i = 0; i < card.Length; i++)
             {
-                Console.WriteLine($"{card[i]}");
+                Console.Write($"{card[i]}");
             }
 
-            Console.ReadLine();
+            for (int i = 0; i < card.Length; i++)
+            {
+                number[card[i]]++;
+                if (number[card[i]] == 2)
+                {
+                    pair++;
+                }
+            }
+
+
+
+            Console.WriteLine($"ペア数{pair}");
+
+                Console.ReadLine();
         }
     }
 }
