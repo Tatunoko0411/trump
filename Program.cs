@@ -13,14 +13,19 @@ namespace ConsoleTrump
             int[] card = new int[4];
             int[] number = new int[4];
             int pair = 0;
+            int ThreeFour = 0;
             for (int i = 0; i < card.Length; i++)
             {
                 while(true)
                 {
+                    bool parse;
+                    string input;
                     Console.WriteLine("1～4の数字を入力してね");
-                    card[i]=int.Parse(Console.ReadLine());
+                    input = Console.ReadLine();
+                   parse = int.TryParse(input,out card[i]);
+                    
 
-                    if(card[i]>=1&&card[i]<=4)
+                    if(card[i]>=1&&card[i]<=4&&parse==true)
                     {
                         break;
                     }
@@ -45,9 +50,20 @@ namespace ConsoleTrump
                 {
                     pair++;
                 }
+                if(number[card[i]]>=3)
+                {
+                    ThreeFour = number[card[i]];
+                }
             }
 
+            if(pair >= 1)
+            {
 
+            }
+            else
+            {
+                Console.WriteLine($"ノーペア");
+            }
 
             Console.WriteLine($"ペア数{pair}");
 
