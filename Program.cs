@@ -11,7 +11,7 @@ namespace ConsoleTrump
         static void Main(string[] args)
         {
             int[] card = new int[4];
-            int[] number = new int[4];
+            int[] number = new int[5];
             int pair = 0;
             int ThreeFour = 0;
             for (int i = 0; i < card.Length; i++)
@@ -58,15 +58,27 @@ namespace ConsoleTrump
 
             if(pair >= 1)
             {
-
+                if (pair >= 2)
+                {
+                    Console.WriteLine($"ツーペア");
+                }
+                else if(ThreeFour==3)
+                {
+                    Console.WriteLine($"スリーカード");
+                }
+                else if (ThreeFour == 4)
+                {
+                    Console.WriteLine($"フォーカード");
+                }
+                else
+                {
+                    Console.WriteLine($"ワンペア");
+                }
             }
             else
             {
                 Console.WriteLine($"ノーペア");
             }
-
-            Console.WriteLine($"ペア数{pair}");
-
                 Console.ReadLine();
         }
     }
